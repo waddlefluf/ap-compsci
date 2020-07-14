@@ -5,8 +5,6 @@ import java.util.Random;
 
 public class Tester {
     public static void main(String[] args) {
-        Random random = new Random();
-
         // 1.
         // b.
 
@@ -40,11 +38,18 @@ public class Tester {
         p2.setX(11);
         System.out.println("p1 is to the right of p2: " + p1.isRightOf(p2) + "\n");
 
+        targetDistance();
+    }
+
+
+    static ArrayList<Point> randomPointList(int size) {
+
         // b.
 
         ArrayList<Point> pointList = new ArrayList<>();
+        Random random = new Random();
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < size; i++) {
             // add random points to point list
             double rx = random.nextInt((100 - -100) + 1) + -100;
             double ry = random.nextInt((100 - -100) + 1) + -100;
@@ -53,7 +58,14 @@ public class Tester {
             pointList.add(p);
         }
 
-        // c. / d.
+        return pointList;
+    }
+
+    static void targetDistance() {
+        // c. + d.
+
+        ArrayList<Point> pointList = randomPointList(100);
+
         Point target = pointList.get(pointList.size() - 1);
 
         double largest = 0;
@@ -77,7 +89,7 @@ public class Tester {
         }
 
         System.out.println("\nPoint furthest from target: " + largestPoint + "" +
-                           "\nWith distance of: " + largest);
-
+                "\nWith distance of: " + largest);
     }
 }
+
