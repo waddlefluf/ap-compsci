@@ -6,7 +6,7 @@ public class Set1 {
         // System.out.println("\narea: " + triangleArea(200, 450, 382)); // #2
 
         /*
-        //# 3
+        // # 3
         Scanner input = new Scanner(System.in);
 
         System.out.println("Enter temperature:");
@@ -17,7 +17,7 @@ public class Set1 {
         System.out.println("\n\nTemperature:\t" + t + "\nWind Speed:\t\t" + w + "\n\nWind Chill:\t\t" + result);
         */
 
-        // dice(); #4
+        // dice(); // #4
 
 
     }
