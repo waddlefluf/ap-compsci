@@ -2,7 +2,7 @@ public class Set3 {
     public static void main(String[] args) {
         System.out.println(max(4, 16, 128));
         System.out.println(average(4, 3, 2, 8));
-        System.out.println(displayNTimes("hello", 3));
+        displayNTimes("hello", 3);
         System.out.println(getRepeatedMsg("test", 4));
         System.out.println(max(0, 204, 32, 17));
         System.out.println(countFactors(18));
@@ -15,11 +15,13 @@ public class Set3 {
         System.out.println(countLetter('s', "mississippi"));
         System.out.println(weave2("....", "''''"));
 
-        /*for (int n = 0; n < 10000; n++) {
+        /*
+        for (int n = 0; n < 10000; n++) {
             if (isPrime(n)) {
                 System.out.println(n + " is prime");
             }
-        }*/ // loop tester for isPrime
+        }
+        */ // loop tester for isPrime
     }
 
     // 1.
@@ -28,16 +30,16 @@ public class Set3 {
     }
 
     static double average(int num1, int num2, int num3, int num4) {
-        return (num1 + num2 + num3 + num4) / (double)(4);
+        return (num1 + num2 + num3 + num4) / 4.0;
     }
 
-    static String displayNTimes(String word, int count) {
+    static void displayNTimes(String word, int count) {
         String str = "";
         for (int i = 0; i < count; i++) {
             str += word;
         }
 
-        return str;
+        System.out.println(str);
     }
 
     static String getRepeatedMsg(String word, int count) {
@@ -97,7 +99,10 @@ public class Set3 {
     }
 
     static boolean sameLastLetter(String str1, String str2) {
-        return (str1.substring(str1.length() - 1).equalsIgnoreCase(str2.substring(str2.length() - 1)));
+        if (str1.length() > 0 && str2.length() > 0)
+            return (str1.substring(str1.length() - 1).equalsIgnoreCase(str2.substring(str2.length() - 1)));
+        else
+            return false;
     }
 
     static String doubleDisplay(String str) {
