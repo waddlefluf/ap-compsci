@@ -31,7 +31,7 @@ public class Point {
     }
 
     boolean isRightOf(Point other) {
-        return this.x > other.x;
+        return this.x > other.x;    
     }
 
     public String toString() {

@@ -8,7 +8,8 @@ public class Tester {
         // 1.
         // b.
 
-        /*Sphere s = new Sphere(10);
+        /*
+        Sphere s = new Sphere(10);
         Sphere s2 = new Sphere(20);
 
         System.out.println(s);
@@ -22,7 +23,8 @@ public class Tester {
 
         s.setRadius(32);
 
-        System.out.println(s.isLargerThan(s2));*/
+        System.out.println(s.isLargerThan(s2));
+        */
 
         // 2.
         // a. (tester)
@@ -89,7 +91,7 @@ public class Tester {
         }
 
         System.out.println("\nPoint furthest from target: " + largestPoint + "" +
-                "\nWith distance of: " + largest);
+                           "\nWith distance of: " + largest);
     }
 }
 
