@@ -32,7 +32,7 @@ public class Set1 {
         System.out.println("Enter radius:");
         rad = input.nextDouble();
 
-        cir = (2*Math.PI) * rad; // c = 2πr
+        cir = (2*Math.PI) * rad;    // c = 2πr
         area = Math.PI * (rad*rad); // a = πr²
 
         System.out.println("Circumference:\t" + cir + "\nArea:\t" + area);

@@ -87,8 +87,11 @@ public class Set3 {
             str += str2;
             str += str1;
         }
-//         return str2 + str1 + str2 + str1; /* this is shorter and also works,
-//                                              but i think the other method is better for easily changing the method*/
+        // return str2 + str1 + str2 + str1; /*
+        //                                    this is shorter and also works,
+        //                                    but i think the other method is
+        //                                    better for easily changing the method
+        //                                   */
 
         return str;
     }

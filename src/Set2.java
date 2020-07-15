@@ -57,7 +57,8 @@ public class Set2 {
 
     static void codeRewrite() {
         // this isn't an actual method, just answers to one of the problems (other than c.)
-       /* // a.
+       /*
+       // a.
         if (n < 0) {
             doSomethingWith(n);
         }
@@ -74,9 +75,11 @@ public class Set2 {
             x = -x;
         } else {
             x++
-        }*/
+        }
+        */
 
         // c.
+
         int [] a = new int[9];
         a[0] = 30;
         for (int i = 1; i < 9; i++) {
