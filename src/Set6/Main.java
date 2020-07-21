@@ -1,21 +1,9 @@
 package Set6;
 
+import java.util.Map;
+
 public class Main {
     public static void main(String[] args) {
-        // 1. (pre-object version)
-
-        /*
-        ArrayList<Point> path = new ArrayList<>();
-
-        path.add(new Point(0,0));
-        path.add(new Point(0,10));
-        path.add(new Point(10,10));
-        path.add(new Point(10,0));
-        path.add(new Point(0,0));
-
-        System.out.println(pathLength(path));
-        */
-
         /*
         Path path = new Path();
 
@@ -27,18 +15,14 @@ public class Main {
 
         System.out.println(path.getLength());
 
-        VotingMachine vote = new VotingMachine();
-        vote.castVote(1);
-        vote.castVote(0);
-        vote.castVote(0);
+         */
 
-        System.out.println(vote.getTotalVotes(0));
-        System.out.println(vote.getTotalVotes(1));
-        System.out.println(vote.getTotalVotes(2));
-        System.out.println(vote.getWinner());
-        */
+        /*
+         * these tests are for the first version of the voting machine that uses
+         * candidate0, candidate1, etc. rather than names.
+         */
 
-        VotingMachine vote = new VotingMachine(5);
+        VotingMachineOld vote = new VotingMachineOld(5);
 
         // System.out.println(vote.candidates);
 
@@ -50,30 +34,45 @@ public class Main {
         vote.castVote(3);
 
         // System.out.println(vote.candidates);
+        System.out.println("Old voting machine (use nums instead of names):\n");
 
         System.out.println("Votes for candidate 0:\t" + vote.getTotalVotesFor(0));
-
-        System.out.println("Winner:\t" + vote.getWinner());
+        System.out.printf("\nWinner:%19s\n", vote.getWinner());
 
         vote.display();
 
+        // updated VotingMachine:
 
+        VotingMachine machine = new VotingMachine();
+
+        /*
+         * these tests are for the updated version of the voting machine that uses
+         * names instead of numbers for candidates
+         */
+
+        System.out.println("\n\nUpdated voting machine (using names):\n");
+
+        machine.addCandidate("Person");;
+        machine.addCandidate("Luigi");
+        machine.addCandidate("Mario");
+        machine.addCandidate("Someone");
+        machine.addCandidate("b");
+
+        machine.castVote("Person");
+        machine.castVote("Nobody"); // does nothing since "Nobody" is not a candidate
+        machine.castVote("b");
+        machine.castVote("b");
+        machine.castVote("Luigi");
+        machine.castVote("Luigi");
+        machine.castVote("Luigi");
+        machine.castVote("Someone");
+
+        for (Map.Entry<String, Integer> entry : machine.getCandidates().entrySet())
+            // loop through candidates and print how many votes each got (tester for getTotalVotesFor)
+            System.out.printf("%-15s %10d\n", entry.getKey() + ":", machine.getTotalVotesFor(entry.getKey()));
+
+        System.out.printf("\nWinner:%19s\n\n", machine.getWinner());
+
+        machine.display();
     }
-
-    /*
-    static double pathLength(ArrayList<Point> path) {
-        // 1. (pre-object version)
-
-        double length = 0;
-
-        for (int i = 0; i < path.size()-1; i++) {
-            Point p1 = path.get(i);
-            Point p2 = path.get(i+1);
-            length += p1.distanceTo(p2);
-        }
-
-        return length;
-    }
-    */
-
 }

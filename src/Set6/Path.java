@@ -4,7 +4,7 @@ import Set4.Point;
 import java.util.ArrayList;
 
 public class Path {
-    ArrayList<Point> path = new ArrayList<>();
+    private ArrayList<Point> path = new ArrayList<>();
 
     Path() {
         this.path = path;
@@ -29,5 +29,16 @@ public class Path {
         }
 
         return length;
+    }
+
+    Point getLocationAtPercent(double percent) {
+        /*
+         * plan:
+         *  - total path length = distance from point[0] - point[length-1]
+         *  - percent = (point ÷ total) * 100
+         */
+
+
+        return new Point(0,0);
     }
 }

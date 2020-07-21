@@ -1,32 +1,31 @@
 package Set6;
 
+import java.text.DecimalFormat;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class VotingMachine {
-    /* possibly use associative array/hash map to assign nums to candidates */
-    LinkedHashMap<String, Integer> candidates = new LinkedHashMap<>();
-    int candidatesNum;
+class VotingMachine {
+    private DecimalFormat df = new DecimalFormat("0.00");
+    private LinkedHashMap<String, Integer> candidates = new LinkedHashMap<>();
 
-    VotingMachine(int candidatesNum) {
-        this.candidatesNum = candidatesNum;
+    VotingMachine() { }
 
-        for (int i = 0; i < candidatesNum; i++) {
-            candidates.put("candidate" + i, 0);
-        }
+    LinkedHashMap<String, Integer> getCandidates() {
+        return candidates;
     }
 
-    void castVote(int n) {
-        if (n <= candidatesNum && n >= 0)
-            candidates.merge("candidate" + n, 1, Integer::sum);
+    void addCandidate(String name) {
+        candidates.put(name, 0);
     }
 
-    int getTotalVotesFor(int n) {
-        if (n <= candidatesNum && n >= 0)
-            return candidates.get("candidate" + n);
-        else
-            return 0;
+    void castVote(String name) {
+        if (candidates.containsKey(name))
+            candidates.merge(name, 1, Integer::sum);
+    }
+
+    int getTotalVotesFor(String name) {
+        return candidates.get(name);
     }
 
     String getWinner() {
@@ -34,10 +33,9 @@ public class VotingMachine {
     }
 
     void display() {
-        for (int i = 0; i < candidatesNum; i++) {
-            double percent = ((double)(candidates.get("candidate" + i)) / candidatesNum) * 100;
-            System.out.println("Candidate " + i + ":\t" + percent + "%");
+        for (Map.Entry<String, Integer> entry : candidates.entrySet()) {
+            double percent = ((double)(entry.getValue()) / candidates.size()) * 100;
+            System.out.printf("%-15s %9s%%\n", entry.getKey() + ":", df.format(percent));
         }
-
     }
 }
