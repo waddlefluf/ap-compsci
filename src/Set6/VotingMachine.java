@@ -28,6 +28,11 @@ class VotingMachine {
         return candidates.get(name);
     }
 
+    void getAllTotalVotes() {
+        for(Map.Entry<String, Integer> entry : candidates.entrySet())
+            System.out.printf("%-15s %10d\n", entry.getKey() + ":", getTotalVotesFor(entry.getKey()));
+    }
+
     String getWinner() {
         return Collections.max(candidates.entrySet(), Map.Entry.comparingByValue()).getKey();
     }
@@ -37,5 +42,6 @@ class VotingMachine {
             double percent = ((double)(entry.getValue()) / candidates.size()) * 100;
             System.out.printf("%-15s %9s%%\n", entry.getKey() + ":", df.format(percent));
         }
+
     }
 }

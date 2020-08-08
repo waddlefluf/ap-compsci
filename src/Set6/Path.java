@@ -6,10 +6,6 @@ import java.util.ArrayList;
 public class Path {
     private ArrayList<Point> path = new ArrayList<>();
 
-    Path() {
-        this.path = path;
-    }
-
     void addPoint(int x, int y) {
         path.add(new Point(x, y));
     }
@@ -31,14 +27,12 @@ public class Path {
         return length;
     }
 
-    Point getLocationAtPercent(double percent) {
-        /*
-         * plan:
-         *  - total path length = distance from point[0] - point[length-1]
-         *  - percent = (point ÷ total) * 100
-         */
+    Point getPoint(int i) {
+        try {
+            return path.get(i);
+        } catch(IndexOutOfBoundsException e) {
+            return null;
+        }
 
-
-        return new Point(0,0);
     }
 }

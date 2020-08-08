@@ -34,7 +34,16 @@ public class Point {
         return this.x > other.x;    
     }
 
+    public Point getLocationAtPercent(double percent, Point other) {
+        double dec = percent / 100;
+
+        return new Point((this.x + other.x) * dec, (this.y + other.y) * dec);
+
+        // might try to go back to full bonus Path problem later
+    }
+
     public String toString() {
         return "(" + x + ", " + y + ")";
+
     }
 }
