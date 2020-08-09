@@ -9,8 +9,6 @@ class VotingMachine {
     private DecimalFormat df = new DecimalFormat("0.00");
     private LinkedHashMap<String, Integer> candidates = new LinkedHashMap<>();
 
-    VotingMachine() { }
-
     LinkedHashMap<String, Integer> getCandidates() {
         return candidates;
     }
