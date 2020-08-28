@@ -1,4 +1,4 @@
-package Set5;
+package Summer2020.Set5;
 
 import java.util.ArrayList;
 import java.util.Scanner;

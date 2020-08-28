@@ -1,4 +1,4 @@
-package Set6;
+package Summer2020.Set6;
 
 import java.text.DecimalFormat;
 import java.util.Collections;

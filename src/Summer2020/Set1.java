@@ -1,3 +1,5 @@
+package Summer2020;
+
 import java.util.Scanner;
 
 public class Set1 {

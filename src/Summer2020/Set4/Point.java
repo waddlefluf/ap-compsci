@@ -1,4 +1,4 @@
-package Set4;
+package Summer2020.Set4;
 
 public class Point {
     private double x;

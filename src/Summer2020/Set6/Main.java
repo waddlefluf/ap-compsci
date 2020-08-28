@@ -1,6 +1,6 @@
-package Set6;
+package Summer2020.Set6;
 
-import Set4.Point;
+import Summer2020.Set4.Point;
 
 public class Main {
     public static void main(String[] args) {

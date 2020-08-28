@@ -1,3 +1,5 @@
+package Summer2020;
+
 public class Set3 {
     public static void main(String[] args) {
         System.out.println(max(4, 16, 128));
